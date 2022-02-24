@@ -6,7 +6,7 @@ description: "Just the Docs is a responsive Jekyll theme with built-in search th
 permalink: /
 ---
 
-# Multivariate Correlation Detection Algorithm
+# Correlation Detective
 {: .fs-9 }
 
 Correlation Detective is a fast and scalable family of algorithms for finding interesting multivariate correlations in a dataset. 
@@ -19,6 +19,27 @@ Correlation Detective is a fast and scalable family of algorithms for finding in
 
 ## What is CD?
 <iframe width="560" height="315" src="https://www.youtube.com/embed/U7z4uyonixk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Why CD?
+{% include icon.html id="twitter" title="twitter" %}
+  - Two orders of magnitude faster
+  - Generic, supports multiple query types, measures and constraints
+  - Has extensions that support query approximation and streaming data
+
+## What is a multivariate correlation?
+  - Correlation between 3 or more variables, in contrast to most common correlation measures which only take two variables as input.
+  - An example of a multivariate correlation is simply measuring the pearson correlation between aggregations of two sets of variables.
+  - Example with stock prices
+  - There exist more multivariate correlation measures such as multipoles, Total correlation, or Canonical Correlation coefficient
+
+## Why are they relevant? (use cases)
+  - Finance
+  - Genomics
+  - Neuroscience
+  - Meteology  
+
+## How does CD work?
+  - ...
 
 <!-- ## Getting started
 
