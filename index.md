@@ -20,12 +20,6 @@ Correlation Detective is a fast and scalable family of algorithms for finding in
 ## What is CD?
 <iframe width="560" height="315" src="https://www.youtube.com/embed/U7z4uyonixk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Why CD?
-{% include icon.html id="twitter" title="twitter" %}
-  - Two orders of magnitude faster
-  - Generic, supports multiple query types, measures and constraints
-  - Has extensions that support query approximation and streaming data
-
 ## What is a multivariate correlation?
   - Correlation between 3 or more variables, in contrast to most common correlation measures which only take two variables as input.
   - An example of a multivariate correlation is simply measuring the pearson correlation between aggregations of two sets of variables.
@@ -37,6 +31,11 @@ Correlation Detective is a fast and scalable family of algorithms for finding in
   - Genomics
   - Neuroscience
   - Meteology  
+
+## Why CD?
+  - Two orders of magnitude faster
+  - Generic, supports multiple query types, measures and constraints
+  - Has extensions that support query approximation and streaming data
 
 ## How does CD work?
   - ...
