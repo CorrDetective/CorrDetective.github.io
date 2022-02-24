@@ -70,6 +70,12 @@ $red-100: #f96e65 !default;
 $red-200: #e94c4c !default;
 $red-300: #dd2e2e !default;
 
+$red-1: #C81919 !default;
+$red-2: #F6B8B8 !default;
+
+$grey-1: #3B3838 !default;
+$grey-2: #BFBFBF !default;
+
 $body-background-color: $white !default;
 $sidebar-color: $grey-lt-000 !default;
 $search-background-color: $white !default;
@@ -81,8 +87,8 @@ $body-text-color: $grey-dk-100 !default;
 $body-heading-color: $grey-dk-300 !default;
 $search-result-preview-color: $grey-dk-000 !default;
 $nav-child-link-color: $grey-dk-100 !default;
-$link-color: $purple-000 !default;
-$btn-primary-color: $purple-100 !default;
+$link-color: $red-1 !default;
+$btn-primary-color: $red-1 !default;
 $base-button-color: #f7f7f7 !default;
 
 //
