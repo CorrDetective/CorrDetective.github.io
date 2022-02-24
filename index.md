@@ -17,6 +17,9 @@ Correlation Detective is a fast and scalable family of algorithms for finding in
 
 ---
 
+## What is CD?
+<iframe width="560" height="315" src="https://www.youtube.com/embed/U7z4uyonixk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 <!-- ## Getting started
 
 ### Dependencies
