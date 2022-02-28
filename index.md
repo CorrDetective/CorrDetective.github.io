@@ -21,10 +21,22 @@ Correlation Detective is a fast and scalable family of algorithms for finding in
 <iframe width="560" height="315" src="https://www.youtube.com/embed/U7z4uyonixk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## What is a multivariate correlation?
-  - Correlation between 3 or more variables, in contrast to most common correlation measures which only take two variables as input.
-  - An example of a multivariate correlation is simply measuring the pearson correlation between aggregations of two sets of variables.
-  - Example with stock prices
-  - There exist more multivariate correlation measures such as multipoles, Total correlation, or Canonical Correlation coefficient
+Strictly speaking, a multivariate correlation is any statistical relationship (whether causal or not) between **three or more** random variables or multivariate data. This concept is different from the more commonly used *bivariate correlation* ([Wiki](https://en.wikipedia.org/wiki/Correlation)) which only considers two variables. 
+
+There are a multitude of multivariate correlation metrics that measure such relationships, the most straightforward being **Multi-Pearson**. This metric essentially measures the *Pearson correlation coefficient* ([Wiki](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient)) between aggregations of two sets of variables.
+
+***In words***, this boils down to for example asking the question *"How dependent is the sale of ice cream in Spain on the average temperate between Madrid and Barcelona"* (multivariate), where one would only consider the temperature of single locations when focusing on bivariate correlations.
+
+***Mathematically***, if we want to derive the multivariate correlation coefficient $$\rho$$ between variable sets $$\{A\}$$ and $$\{B,C\}$$ using averaging as an aggregation method, this boils down to computing;
+
+$$ \rho_{A,(BC)} = \rho(A,\frac{B+C}{2}) = \frac{cov(A, (B+C)/2)}{\sigma_A, \sigma_{(B+C)/2}}$$
+
+[Figure]
+
+Note that these examples only consider the Multi-Pearson correlation metric, while there also exist plenty of research on other multivariate correlation metrics such as:
+- **Total Correlation** ([Wiki](https://en.wikipedia.org/wiki/Total_correlation))
+- **Canonical Correlation Analysis** ([Wiki](https://en.wikipedia.org/wiki/Canonical_correlation))
+- **Tripoles/Multipoles** ([Paper](https://conservancy.umn.edu/bitstream/handle/11299/216019/18-003.pdf?sequence=1))
 
 ## Why are they relevant? (use cases)
   - Finance
