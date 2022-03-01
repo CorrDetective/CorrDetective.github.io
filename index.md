@@ -29,9 +29,9 @@ There are a multitude of multivariate correlation metrics that measure such rela
 
 In words, this boils down to for example asking the question *"How dependent is the sale of ice cream in Spain on the average temperate between Madrid and Barcelona"* (multivariate), where one would only consider the temperature of single locations when focusing on bivariate correlations.
 
-Mathematically, if we want to derive the multivariate correlation coefficient $$\rho$$ between variable sets $$\{A\}$$ and $$\{B,C\}$$ using averaging as an aggregation method, this boils down to computing;
+Mathematically, if we want to derive the multivariate correlation coefficient $$\rho$$ between variable sets $$\{A,B\}$$ and $$\{C\}$$ using averaging as an aggregation method, this boils down to computing;
 
-$$ \rho_{A,(BC)} = \rho(A,\frac{B+C}{2}) = \frac{cov(A, (B+C)/2)}{\sigma_A, \sigma_{(B+C)/2}}$$
+$$ \rho_{(AB),C} = \rho(\frac{A+B}{2},C) = \frac{cov((A+B)/2,C)}{\sigma_{(A+B)/2}, \sigma_C}$$
 
 <p style="text-align:center">
     <img src="https://user-images.githubusercontent.com/100126005/156187992-173a4361-4fc7-4c9b-b06f-987a2cb8381b.png" alt>
@@ -47,16 +47,30 @@ Also note that these examples only consider the Multi-Pearson correlation metric
 
 --- 
 
-## Why are they relevant? (use cases)
-  - Finance
-  - Genomics
-  - Neuroscience
-  - Meteology  
+## Why are they relevant? 
+Recent studies have repeatedly shown that multivariate correlations can capture patterns in data that could not have been found by only considering bivariate correlations.
+Consequently, by considering such correlations one can **gain new insights from data**, which help for better understanding (natural) phenomena.
+That's why multivariate correlations have become a popular topic in research communities from a wide variety of scientific domains throughout the last years.
+
+A list of new discoveries that have been done with multivariate correlation analysis in different domains:
+1. **Neuroscience**
+  - Analysis of *fMRI* data lead to the discovery that the brain's left middle frontal assimilates information from the right superior frontal and left inferior frontal regions while listening to audio ([Paper](https://conservancy.umn.edu/bitstream/handle/11299/216019/18-003.pdf?sequence=1)).
+2. **Climatology**
+  - Analysis of *Air Pressure* data lead to the discovery of led to the characterization of a new weather phenomenon and to improved climate models. Precicely, that the air pressure over the West Siberian Plain is strongly negatively correlated to the aggregated pressure levels over Darwin, Australia and Tahiti ([Paper](http://users.stat.umn.edu/~chatt019//Research/Papers/JClimate17301_Liessetal_C.pdf)).
+3. **Genomics/Medicine**
+  - Researchers found through analysis of *gene* data that presence of multiple RASopathy genes contributed to an elevated risk of autism spectrum disorders (ASDs) due to a phenomenon called epistasis. This phenomenon involves the dependence of the effect of a gene mutation on the presence or absence of mutations in other genes. In other words, multiple genes interact with each other which impacts the expression of a disease, while each gene individually only has weak correlation with the disease trait ([Paper](https://watermark.silverchair.com/genetics0277.pdf?token=AQECAHi208BE49Ooan9kkhW_Ercy7Dm3ZL_9Cf3qfKAc485ysgAAAvgwggL0BgkqhkiG9w0BBwagggLlMIIC4QIBADCCAtoGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMp9AlPV6RbDzvWWwPAgEQgIICq5VyDr1FHsXVbwEkJS0OMrpRtB1iX4f35uqgbujRldy7cMVNlKhF76T9A3OjjjITkrylUSMKXJRC2DXsDXu11OQkndAv78t5A9DqgLffELnyqxLqdhz_VFE1E03sdacI-3o1JP2S7jaeCKWEOAXtU798TIfUPEbhIyfz-55XAJvwtak_NyPg41elCkbxO0mUGeyMBfITZ5UiUurh9m8S-RCccYl1Wuw-O2m-n0G94UNJvt4JEU8hRsKwLbGZrAs1HkSERDw9aoynOf1gA9sFpE5jwPgMVoAAf5SEZPz_CqsDi5R2WS5K-mto0WfiVjNUZjNz186Jychc6Nna47Y5Mf6fDsNTTKypr7hb7NQC2J0oWA2mGEwOFrvN4I5vH4zmlxN-BYUEcp4nOJ9lOvPFNxe8FgksBpo1MXOEemT6iK5KkrsuxZidhu1b-bGXRNckFn6Gycf7WVOuMdhp-7OuYysucGN454Ietqw_TIYAPFR26qkQQDAZ-9khz9LQgyq2ThFktCzJpOZCcX_-KlReG73RrQFNep3ggr0T44QdloBYOuHf4udnwwEJ-GIUokm5fC2Tis8LXcN8QxUofMrrPQ3wN6Jqh16FzBUe5PsYet9u8qj75mBMGv9qm_MGPqJjeHmakPbBzzf5U2tWPLUWnHE9IfviKfhZEcNELFBBNMdscHsUqbClQrmZ-TMg-KMLIZFidPpX3ypvG03A6UjI7hUNfVlJwCcPmMiijxO6GWi1kPbA9jkRPqkNBKMRWHJSMa2AygJtrgued_PfkGj61UhXtvFKzCf85p6akbzx9CSJy2ZW8BJXck7CRt5rYzbyE3U0XIBkcN9fIAL2LiCVQ7krBz4xVjy4oa5qSMsXSgLXMFJgeIXaLa2xWbV2wACBTiiQRks34Cqm41CC)).
+4. **Finance**
+  - While part of ongoing research, multivariate correlation analysis of *stock price* data has found application in *portfolio diversification* (the act of creating a selection of stocks that minimizes risk) and *portfolio repair* (the act of finding one or more replacements of a stock in a portfolio such that it follows the old porfolio's performance as close as possible).
+
+
+---
 
 ## Why CD?
   - Two orders of magnitude faster
   - Generic, supports multiple query types, measures and constraints
   - Has extensions that support query approximation and streaming data
+
+---
 
 ## How does CD work?
   - ...
