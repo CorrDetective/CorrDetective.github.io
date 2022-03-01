@@ -24,6 +24,6 @@ Do you room for collaboration or (non-commercial) application of these solutions
 - Focused on applied AI
 
 ### Jens d'Hondt (Msc.)
-![](https://i.ibb.co/2YJNCKs/croppedv3.jpg)
+![](https://user-images.githubusercontent.com/100126005/156188147-138247bf-dbaa-4b11-b4af-3d0096ede02d.jpeg)
 - Research Scientist at TU/e
 - Focused on multivariate correlation query systems
