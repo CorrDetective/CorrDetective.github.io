@@ -17,13 +17,13 @@ Correlation Detective is a fast and scalable family of algorithms for finding in
 
 ---
 
-## What is CD?
+## What is CD? (2 min video)
 <iframe width="560" height="315" src="https://www.youtube.com/embed/U7z4uyonixk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 --- 
 
-## What is a multivariate correlation?
-Strictly speaking, a multivariate correlation is any statistical relationship (whether causal or not) between three or more random variables or multivariate data. This concept is different from the more commonly used *bivariate correlation* ([Wiki](https://en.wikipedia.org/wiki/Correlation)) which only considers two variables. 
+## What is a multivariate correlation (MC)?
+Strictly speaking, a multivariate correlation is any statistical relationship (whether causal or not) between three or more random variables or multivariate data. This concept is different from the more commonly used *bivariate/pairwise correlation* ([Wiki](https://en.wikipedia.org/wiki/Correlation)) which only considers two variables. 
 
 There are a multitude of multivariate correlation metrics that measure such relationships, the most straightforward being *Multi-Pearson*. This metric essentially measures the *Pearson correlation coefficient* ([Wiki](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient)) between (element-wise aggregations of two sets of variables.
 
@@ -62,18 +62,69 @@ A list of new discoveries that have been done with multivariate correlation anal
 4. **Finance**
   - While part of ongoing research, multivariate correlation analysis of *stock price* data has found application in *portfolio diversification* (the act of creating a selection of stocks that minimizes risk) and *portfolio repair* (the act of finding one or more replacements of a stock in a portfolio such that it follows the old porfolio's performance as close as possible).
 
-
 ---
 
-## Why CD?
-  - Two orders of magnitude faster
-  - Generic, supports multiple query types, measures and constraints
-  - Has extensions that support query approximation and streaming data
+## Why Correlation Detective?
+<br>
+*"If MC analysis is so straightforward and valuable, why are we figuring it out just now?"*
+<br>
+
+Good question. Unfortunately, the problem with MC analysis is that it's very **computationally expensive**, meaning it takes a long time to finish. \\
+This has to do with the following; 
+1. MC analysis involves finding all interesting correlations in a dataset of vectors/time-series.
+2. This means that one has to compute (or estimate) the correlations of all possible combinations of vectors in the dataset.
+3. The total number of vector combinations in a dataset increases almost *exponentially* with the set size of such a combination.
+4. Therefore, the computational effort of the analysis increases immensely if one wants to consider multivariate correlations besides the traditional bivariate correlations.
+
+*Example:* a reasonable dataset of 1000 vectors includes around 500K unique combinations of 2 vectors. Computing the (Pearson) correlation for each combination would take around **1 second** on a strong laptop with a multithreaded algorithm. However, considering combinations of 3 vectors already involves iterating over 500 million combinations, which would take around **8 minutes**. Combinations of 4 vectors? Over one trillion combinations and an estimated computation time of over **28 hours**.
+
+There exist other algorithms which bring these computation times down by at most one order of magnitude. However, they do not guarantee to find all interesting combinations and usually also impose constraints on the results (e.g. only consider combinations of 3 vectors that have high internal pairwise correlations).
+
+In contrast, Correlation Detective is ...
+1. Two orders of magnitude **faster** than baseline algorithms (see figure below for reference)
+2. **Generic**; supports multiple query types, measures and *optional* constraints
+3. Has extensions that support query **approximation** and **streaming** data
+
+These factors make that CD now enables researchers and analysts to include MC analysis as a regular step in their workflow.
+
+<p style="text-align:center">
+  <!-- <table>
+  <tr>
+      <th>Combination size</th>
+      <th>Baseline</th>
+      <th>CD</th>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>1.2 sec</td>
+      <td>1.0 sec</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>8 min</td>
+      <td>18 sec</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>28 h</td>
+      <td>70 min</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>~239 days</td>
+      <td>15 h</td>
+    </tr>
+  </table> -->
+  <img src="https://user-images.githubusercontent.com/100126005/156346734-323b0029-e9cd-426f-a07b-5df260ca6f20.png" width="80%" alt><br>
+  <em>Computation times of MC analysis for a dataset of 1000 stock prices</em>
+</p>
 
 ---
 
 ## How does CD work?
-  - ...
+#### Coming soon
+
+
 
 <!-- ## Getting started
 
