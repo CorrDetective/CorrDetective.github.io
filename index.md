@@ -13,7 +13,7 @@ Correlation Detective is a fast and scalable family of algorithms for finding in
 {: .fs-6 .fw-300 }
 
 [View it on GitHub](https://github.com/correlationdetective/public){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
- [Get Paper](https://raw.githubusercontent.com/CorrelationDetective/public/main/Technical_Report.pdf){: .btn .fs-5 .mb-4 .mb-md-0 }
+[Get Paper](https://raw.githubusercontent.com/CorrelationDetective/public/main/Technical_Report.pdf){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---
 
@@ -23,13 +23,13 @@ Correlation Detective is a fast and scalable family of algorithms for finding in
 --- 
 
 ## What is a multivariate correlation (MC)?
-Strictly speaking, a multivariate correlation is any statistical relationship (whether causal or not) between three or more random variables or multivariate data. This concept is different from the more commonly used *bivariate/pairwise correlation* ([Wiki](https://en.wikipedia.org/wiki/Correlation)) which only considers two variables. 
+Strictly speaking, a multivariate correlation is any statistical relationship (whether causal or not) between three or more random variables (e.g. time-series/vectors). This concept is different from the more commonly used *bivariate/pairwise correlation* ([Wiki](https://en.wikipedia.org/wiki/Correlation)) which only considers two variables.
 
-There are a multitude of multivariate correlation metrics that measure such relationships, the most straightforward being *Multi-Pearson*. This metric essentially measures the *Pearson correlation coefficient* ([Wiki](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient)) between (element-wise aggregations of two sets of variables.
+There are a multitude of multivariate correlation metrics that measure such relationships, the most straightforward being *Multi-Pearson*. This metric essentially measures the *Pearson correlation coefficient* ([Wiki](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient)) between (element-wise) aggregations of two sets of vectors.
 
 In words, this boils down to for example asking the question *"How dependent is the sale of ice cream in Spain on the average temperate between Madrid and Barcelona"* (multivariate), where one would only consider the temperature of single locations when focusing on bivariate correlations.
 
-Mathematically, if we want to derive the multivariate correlation coefficient $$\rho$$ between variable sets $$\{A,B\}$$ and $$\{C\}$$ using averaging as an aggregation method, this boils down to computing;
+Mathematically, if we want to derive the multivariate correlation coefficient $$\rho$$ between vector sets $$\{A,B\}$$ and $$\{C\}$$ using averaging as an aggregation method, this boils down to computing;
 
 $$ \rho_{(AB),C} = \rho(\frac{A+B}{2},C) = \frac{cov((A+B)/2,C)}{\sigma_{(A+B)/2}, \sigma_C}$$
 
@@ -43,22 +43,22 @@ Note that while we use averaging as an aggregation method for these examples, Mu
 Also note that these examples only consider the Multi-Pearson correlation metric, while there also exist plenty of research on other multivariate correlation metrics such as:
 - Total Correlation ([Wiki](https://en.wikipedia.org/wiki/Total_correlation))
 - Canonical Correlation Analysis ([Wiki](https://en.wikipedia.org/wiki/Canonical_correlation))
-- Tripoles/Multipoles ([Paper](https://conservancy.umn.edu/bitstream/handle/11299/216019/18-003.pdf?sequence=1))
+- Tripoles/Multipoles ([Link](https://conservancy.umn.edu/bitstream/handle/11299/216019/18-003.pdf?sequence=1))
 
 --- 
 
-## Why are they relevant? 
+## Why are they relevant?
 Recent studies have repeatedly shown that multivariate correlations can capture patterns in data that could not have been found by only considering bivariate correlations.
 Consequently, by considering such correlations one can **gain new insights from data**, which help for better understanding (natural) phenomena.
 That's why multivariate correlations have become a popular topic in research communities from a wide variety of scientific domains throughout the last years.
 
-A list of new discoveries that have been done with multivariate correlation analysis in different domains:
+Some recent discoveries are:
 1. **Neuroscience**
-  - Analysis of *fMRI* data lead to the discovery that the brain's left middle frontal assimilates information from the right superior frontal and left inferior frontal regions while listening to audio ([Paper](https://conservancy.umn.edu/bitstream/handle/11299/216019/18-003.pdf?sequence=1)).
+  - Analysis of *fMRI* data lead to the discovery that the brain's left middle frontal assimilates information from the right superior frontal and left inferior frontal regions while listening to audio ([Link](https://conservancy.umn.edu/bitstream/handle/11299/216019/18-003.pdf?sequence=1)).
 2. **Climatology**
-  - Analysis of *Air Pressure* data lead to the discovery of led to the characterization of a new weather phenomenon and to improved climate models. Precicely, that the air pressure over the West Siberian Plain is strongly negatively correlated to the aggregated pressure levels over Darwin, Australia and Tahiti ([Paper](http://users.stat.umn.edu/~chatt019//Research/Papers/JClimate17301_Liessetal_C.pdf)).
+  - Analysis of *Air Pressure* data lead to the discovery of led to the characterization of a new weather phenomenon and to improved climate models. Precicely, that the air pressure over the West Siberian Plain is strongly negatively correlated to the aggregated pressure levels over Darwin, Australia and Tahiti ([Link](http://users.stat.umn.edu/~chatt019//Research/Papers/JClimate17301_Liessetal_C.pdf)).
 3. **Genomics/Medicine**
-  - Researchers found through analysis of *gene* data that presence of multiple RASopathy genes contributed to an elevated risk of autism spectrum disorders (ASDs) due to a phenomenon called epistasis. This phenomenon involves the dependence of the effect of a gene mutation on the presence or absence of mutations in other genes. In other words, multiple genes interact with each other which impacts the expression of a disease, while each gene individually only has weak correlation with the disease trait ([Paper](https://watermark.silverchair.com/genetics0277.pdf?token=AQECAHi208BE49Ooan9kkhW_Ercy7Dm3ZL_9Cf3qfKAc485ysgAAAvgwggL0BgkqhkiG9w0BBwagggLlMIIC4QIBADCCAtoGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMp9AlPV6RbDzvWWwPAgEQgIICq5VyDr1FHsXVbwEkJS0OMrpRtB1iX4f35uqgbujRldy7cMVNlKhF76T9A3OjjjITkrylUSMKXJRC2DXsDXu11OQkndAv78t5A9DqgLffELnyqxLqdhz_VFE1E03sdacI-3o1JP2S7jaeCKWEOAXtU798TIfUPEbhIyfz-55XAJvwtak_NyPg41elCkbxO0mUGeyMBfITZ5UiUurh9m8S-RCccYl1Wuw-O2m-n0G94UNJvt4JEU8hRsKwLbGZrAs1HkSERDw9aoynOf1gA9sFpE5jwPgMVoAAf5SEZPz_CqsDi5R2WS5K-mto0WfiVjNUZjNz186Jychc6Nna47Y5Mf6fDsNTTKypr7hb7NQC2J0oWA2mGEwOFrvN4I5vH4zmlxN-BYUEcp4nOJ9lOvPFNxe8FgksBpo1MXOEemT6iK5KkrsuxZidhu1b-bGXRNckFn6Gycf7WVOuMdhp-7OuYysucGN454Ietqw_TIYAPFR26qkQQDAZ-9khz9LQgyq2ThFktCzJpOZCcX_-KlReG73RrQFNep3ggr0T44QdloBYOuHf4udnwwEJ-GIUokm5fC2Tis8LXcN8QxUofMrrPQ3wN6Jqh16FzBUe5PsYet9u8qj75mBMGv9qm_MGPqJjeHmakPbBzzf5U2tWPLUWnHE9IfviKfhZEcNELFBBNMdscHsUqbClQrmZ-TMg-KMLIZFidPpX3ypvG03A6UjI7hUNfVlJwCcPmMiijxO6GWi1kPbA9jkRPqkNBKMRWHJSMa2AygJtrgued_PfkGj61UhXtvFKzCf85p6akbzx9CSJy2ZW8BJXck7CRt5rYzbyE3U0XIBkcN9fIAL2LiCVQ7krBz4xVjy4oa5qSMsXSgLXMFJgeIXaLa2xWbV2wACBTiiQRks34Cqm41CC)).
+  - Researchers found through analysis of *gene* data that presence of multiple RASopathy genes contributed to an elevated risk of autism spectrum disorders (ASDs) due to a phenomenon called epistasis. This phenomenon involves the dependence of the effect of a gene mutation on the presence or absence of mutations in other genes. In other words, multiple genes interact with each other which impacts the expression of a disease, while each gene individually only has weak correlation with the disease trait ([Link](https://watermark.silverchair.com/genetics0277.pdf?token=AQECAHi208BE49Ooan9kkhW_Ercy7Dm3ZL_9Cf3qfKAc485ysgAAAvgwggL0BgkqhkiG9w0BBwagggLlMIIC4QIBADCCAtoGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMp9AlPV6RbDzvWWwPAgEQgIICq5VyDr1FHsXVbwEkJS0OMrpRtB1iX4f35uqgbujRldy7cMVNlKhF76T9A3OjjjITkrylUSMKXJRC2DXsDXu11OQkndAv78t5A9DqgLffELnyqxLqdhz_VFE1E03sdacI-3o1JP2S7jaeCKWEOAXtU798TIfUPEbhIyfz-55XAJvwtak_NyPg41elCkbxO0mUGeyMBfITZ5UiUurh9m8S-RCccYl1Wuw-O2m-n0G94UNJvt4JEU8hRsKwLbGZrAs1HkSERDw9aoynOf1gA9sFpE5jwPgMVoAAf5SEZPz_CqsDi5R2WS5K-mto0WfiVjNUZjNz186Jychc6Nna47Y5Mf6fDsNTTKypr7hb7NQC2J0oWA2mGEwOFrvN4I5vH4zmlxN-BYUEcp4nOJ9lOvPFNxe8FgksBpo1MXOEemT6iK5KkrsuxZidhu1b-bGXRNckFn6Gycf7WVOuMdhp-7OuYysucGN454Ietqw_TIYAPFR26qkQQDAZ-9khz9LQgyq2ThFktCzJpOZCcX_-KlReG73RrQFNep3ggr0T44QdloBYOuHf4udnwwEJ-GIUokm5fC2Tis8LXcN8QxUofMrrPQ3wN6Jqh16FzBUe5PsYet9u8qj75mBMGv9qm_MGPqJjeHmakPbBzzf5U2tWPLUWnHE9IfviKfhZEcNELFBBNMdscHsUqbClQrmZ-TMg-KMLIZFidPpX3ypvG03A6UjI7hUNfVlJwCcPmMiijxO6GWi1kPbA9jkRPqkNBKMRWHJSMa2AygJtrgued_PfkGj61UhXtvFKzCf85p6akbzx9CSJy2ZW8BJXck7CRt5rYzbyE3U0XIBkcN9fIAL2LiCVQ7krBz4xVjy4oa5qSMsXSgLXMFJgeIXaLa2xWbV2wACBTiiQRks34Cqm41CC)).
 4. **Finance**
   - While part of ongoing research, multivariate correlation analysis of *stock price* data has found application in *portfolio diversification* (the act of creating a selection of stocks that minimizes risk) and *portfolio repair* (the act of finding one or more replacements of a stock in a portfolio such that it follows the old porfolio's performance as close as possible).
 
@@ -88,9 +88,9 @@ In contrast, Correlation Detective is ...
 These factors make that CD now enables researchers and analysts to include MC analysis as a regular step in their workflow.
 
 <p style="text-align:center">
-  <!-- <table>
+  <table>
   <tr>
-      <th>Combination size</th>
+      <th># Variables in correlation</th>
       <th>Baseline</th>
       <th>CD</th>
     </tr>
@@ -114,15 +114,19 @@ These factors make that CD now enables researchers and analysts to include MC an
       <td>~239 days</td>
       <td>15 h</td>
     </tr>
-  </table> -->
-  <img src="https://user-images.githubusercontent.com/100126005/156346734-323b0029-e9cd-426f-a07b-5df260ca6f20.png" width="80%" alt><br>
+  </table>
+  <!-- <img src="https://user-images.githubusercontent.com/100126005/156346734-323b0029-e9cd-426f-a07b-5df260ca6f20.png" width="80%" alt><br> -->
   <em>Computation times of MC analysis for a dataset of 1000 stock prices</em>
 </p>
 
 ---
 
-## How does CD work?
-#### Coming soon
+# Demo
+Want to see a demo on your own (numerical) dataset? Contact us via [email](mailto:o.papapetrou@tue.nl?subject=Correlation Detective contact&body=Dear Correlation Detective staff). \\
+Also take a look at our [mission statement](https://corrdetective.github.io/pages/about/)
+
+<!-- ## How does CD work?
+#### Coming soon -->
 
 
 
