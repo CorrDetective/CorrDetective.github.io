@@ -27,9 +27,9 @@ Strictly speaking, a multivariate correlation is any statistical relationship (w
 
 There are a multitude of multivariate correlation metrics that measure such relationships, the most straightforward being *Multi-Pearson*. This metric essentially measures the *Pearson correlation coefficient* ([Wiki](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient)) between (element-wise) aggregations of two sets of vectors.
 
-In words, this boils down to for example asking the question *"How dependent is the sale of ice cream in Spain on the average temperate between Madrid and Barcelona"* (multivariate), where one would only consider the temperature of single locations when focusing on bivariate correlations.
+**In words**, this boils down to for example asking the question *"How dependent is the stock price of BMW on the average stock price of Apple and Microsoft?"* (multivariate), where one would only consider the prices of single stocks when focusing on bivariate correlations. This example is visualized in the figure below. Do note that while this multivariate correlation is high, the pairwise correlations between these stocks are low. This shows that multivariate correlations are not a trivial extension to bivariate correlations, but are able to express strong latent relationships as well.
 
-Mathematically, if we want to derive the multivariate correlation coefficient $$\rho$$ between vector sets $$\{A,B\}$$ and $$\{C\}$$ using averaging as an aggregation method, this boils down to computing;
+**Mathematically**, if we want to derive the multivariate correlation coefficient $$\rho$$ between vector sets $$\{A,B\}$$ and $$\{C\}$$ using averaging as an aggregation method, this boils down to computing;
 
 $$ \rho_{(AB),C} = \rho(\frac{A+B}{2},C) = \frac{cov((A+B)/2,C)}{\sigma_{(A+B)/2}, \sigma_C}$$
 
@@ -54,9 +54,12 @@ That's why multivariate correlations have become a popular topic in research com
 
 Some recent discoveries are:
 1. **Neuroscience**
-  - Analysis of *fMRI* data lead to the discovery that the brain's left middle frontal assimilates information from the right superior frontal and left inferior frontal regions while listening to audio ([Link](https://conservancy.umn.edu/bitstream/handle/11299/216019/18-003.pdf?sequence=1)).
+  - Analysis of *fMRI* data lead to the discovery that the brain's left middle frontal assimilates information from the right superior frontal and left inferior frontal regions while listening to audio ([Link](https://conservancy.umn.edu/bitstream/handle/11299/216019/18-003.pdf?sequence=1)). \\
+  <img src="https://user-images.githubusercontent.com/100126005/156396694-734db45e-890e-4cae-b6d6-f418d73e5d1f.png" alt="brain_anno" width="60%">
+  <!-- ![brain_anno](https://user-images.githubusercontent.com/100126005/156396694-734db45e-890e-4cae-b6d6-f418d73e5d1f.png) -->
 2. **Climatology**
   - Analysis of *Air Pressure* data lead to the discovery of led to the characterization of a new weather phenomenon and to improved climate models. Precicely, that the air pressure over the West Siberian Plain is strongly negatively correlated to the aggregated pressure levels over Darwin, Australia and Tahiti ([Link](http://users.stat.umn.edu/~chatt019//Research/Papers/JClimate17301_Liessetal_C.pdf)).
+  <img src="https://user-images.githubusercontent.com/100126005/156396699-d42b033d-d9d0-4c45-bf42-0f49d5309c0d.png" alt="map_anno" width="80%">
 3. **Genomics/Medicine**
   - Researchers found through analysis of *gene* data that presence of multiple RASopathy genes contributed to an elevated risk of autism spectrum disorders (ASDs) due to a phenomenon called epistasis. This phenomenon involves the dependence of the effect of a gene mutation on the presence or absence of mutations in other genes. In other words, multiple genes interact with each other which impacts the expression of a disease, while each gene individually only has weak correlation with the disease trait ([Link](https://watermark.silverchair.com/genetics0277.pdf?token=AQECAHi208BE49Ooan9kkhW_Ercy7Dm3ZL_9Cf3qfKAc485ysgAAAvgwggL0BgkqhkiG9w0BBwagggLlMIIC4QIBADCCAtoGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMp9AlPV6RbDzvWWwPAgEQgIICq5VyDr1FHsXVbwEkJS0OMrpRtB1iX4f35uqgbujRldy7cMVNlKhF76T9A3OjjjITkrylUSMKXJRC2DXsDXu11OQkndAv78t5A9DqgLffELnyqxLqdhz_VFE1E03sdacI-3o1JP2S7jaeCKWEOAXtU798TIfUPEbhIyfz-55XAJvwtak_NyPg41elCkbxO0mUGeyMBfITZ5UiUurh9m8S-RCccYl1Wuw-O2m-n0G94UNJvt4JEU8hRsKwLbGZrAs1HkSERDw9aoynOf1gA9sFpE5jwPgMVoAAf5SEZPz_CqsDi5R2WS5K-mto0WfiVjNUZjNz186Jychc6Nna47Y5Mf6fDsNTTKypr7hb7NQC2J0oWA2mGEwOFrvN4I5vH4zmlxN-BYUEcp4nOJ9lOvPFNxe8FgksBpo1MXOEemT6iK5KkrsuxZidhu1b-bGXRNckFn6Gycf7WVOuMdhp-7OuYysucGN454Ietqw_TIYAPFR26qkQQDAZ-9khz9LQgyq2ThFktCzJpOZCcX_-KlReG73RrQFNep3ggr0T44QdloBYOuHf4udnwwEJ-GIUokm5fC2Tis8LXcN8QxUofMrrPQ3wN6Jqh16FzBUe5PsYet9u8qj75mBMGv9qm_MGPqJjeHmakPbBzzf5U2tWPLUWnHE9IfviKfhZEcNELFBBNMdscHsUqbClQrmZ-TMg-KMLIZFidPpX3ypvG03A6UjI7hUNfVlJwCcPmMiijxO6GWi1kPbA9jkRPqkNBKMRWHJSMa2AygJtrgued_PfkGj61UhXtvFKzCf85p6akbzx9CSJy2ZW8BJXck7CRt5rYzbyE3U0XIBkcN9fIAL2LiCVQ7krBz4xVjy4oa5qSMsXSgLXMFJgeIXaLa2xWbV2wACBTiiQRks34Cqm41CC)).
 4. **Finance**
@@ -89,7 +92,7 @@ These factors make that CD now enables researchers and analysts to include MC an
 
 <p style="text-align:center">
   <table>
-  <tr>
+    <tr>
       <th># Variables in correlation</th>
       <th>Baseline</th>
       <th>CD</th>
@@ -115,8 +118,8 @@ These factors make that CD now enables researchers and analysts to include MC an
       <td>15 h</td>
     </tr>
   </table>
+  <center><em>Computation times of MC analysis for a dataset of 1000 stock prices</em></center>
   <!-- <img src="https://user-images.githubusercontent.com/100126005/156346734-323b0029-e9cd-426f-a07b-5df260ca6f20.png" width="80%" alt><br> -->
-  <em>Computation times of MC analysis for a dataset of 1000 stock prices</em>
 </p>
 
 ---
