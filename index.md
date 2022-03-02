@@ -38,18 +38,18 @@ $$ \rho_{(AB),C} = \rho(\frac{A+B}{2},C) = \frac{cov((A+B)/2,C)}{\sigma_{(A+B)/2
     <em>Visual representation of bivariate and multivariate correlations over stock price data</em>
 </p>
 
-Note that while we use averaging as an aggregation method for these examples, Multi-Pearson supports effectively every element-wise aggregation method such as MAX, MIN, SUM, XOR, etc.
+Even though we use averaging as an aggregation method for these examples, Multi-Pearson supports effectively every element-wise aggregation method such as MAX, MIN, SUM, XOR, etc. This is important as the relevancy of aggregation method depend on the application domain.
 
-Also note that these examples only consider the Multi-Pearson correlation metric, while there also exist plenty of research on other multivariate correlation metrics such as:
-- Total Correlation ([Wiki](https://en.wikipedia.org/wiki/Total_correlation))
-- Canonical Correlation Analysis ([Wiki](https://en.wikipedia.org/wiki/Canonical_correlation))
-- Tripoles/Multipoles ([Link](https://conservancy.umn.edu/bitstream/handle/11299/216019/18-003.pdf?sequence=1))
+Also note that these examples only consider the Multi-Pearson correlation metric, while there also exist plenty of research on other multivariate correlation metrics such as **Tripoles** or **Multipoles** ([Link](https://conservancy.umn.edu/bitstream/handle/11299/216019/18-003.pdf?sequence=1)).
+<!-- - Total Correlation ([Wiki](https://en.wikipedia.org/wiki/Total_correlation)) -->
+<!-- - Canonical Correlation Analysis ([Wiki](https://en.wikipedia.org/wiki/Canonical_correlation)) -->
+<!-- - Tripoles/Multipoles ([Link](https://conservancy.umn.edu/bitstream/handle/11299/216019/18-003.pdf?sequence=1)) -->
 
 --- 
 
 ## Why are they relevant?
 Recent studies have repeatedly shown that multivariate correlations can capture patterns in data that could not have been found by only considering bivariate correlations.
-Consequently, by considering such correlations one can **gain new insights from data**, which help for better understanding (natural) phenomena.
+By considering such correlations one can **gain new insights from data**, which help for better understanding (natural) phenomena.
 That's why multivariate correlations have become a popular topic in research communities from a wide variety of scientific domains throughout the last years.
 
 Some recent discoveries are:
@@ -83,10 +83,10 @@ This has to do with the following;
 
 There exist other algorithms which bring these computation times down by at most one order of magnitude. However, they do not guarantee to find all interesting combinations and usually also impose constraints on the results (e.g. only consider combinations of 3 vectors that have high internal pairwise correlations).
 
-In contrast, Correlation Detective is ...
-1. Two orders of magnitude **faster** than baseline algorithms (see figure below for reference)
-2. **Generic**; supports multiple query types, measures and *optional* constraints
-3. Has extensions that support query **approximation** and **streaming** data
+In contrast, Correlation Detective is
+1. Two orders of magnitude **faster** than baseline algorithms (see figure below for reference).
+2. **Generic**; supports multiple query types, measures and *optional* constraints.
+3. Has extensions that support query **approximation** and **streaming** data.
 
 These factors make that CD now enables researchers and analysts to include MC analysis as a regular step in their workflow.
 
@@ -126,7 +126,7 @@ These factors make that CD now enables researchers and analysts to include MC an
 
 # Demo
 Want to see a demo on your own (numerical) dataset? Contact us via [email](mailto:o.papapetrou@tue.nl?subject=Correlation Detective contact&body=Dear Correlation Detective staff). \\
-Also take a look at our [mission statement](https://corrdetective.github.io/pages/about/)
+Also take a look at our [mission statement](https://corrdetective.github.io/pages/about/).
 
 <!-- ## How does CD work?
 #### Coming soon -->
