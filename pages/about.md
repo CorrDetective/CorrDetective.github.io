@@ -13,10 +13,14 @@ Do you room for collaboration or (non-commercial) application of these solutions
 
 ## People
 
-### dr. Odysseas Papapetrou
-![](https://research.tue.nl/files-asset/106103952/Papapetrou_Odysseas_WI_PO_VH_3194_UD.jpg?w=160&f=webp)
-- Assistant Professor at TU/e
-- Focused on Big Data frameworks and scalable machine learning
+<p style="width=30%">
+<h3> dr. Odysseas Papapetrou</h3>
+<img src="https://research.tue.nl/files-asset/106103952/Papapetrou_Odysseas_WI_PO_VH_3194_UD.jpg?w=160&f=webp">
+ <ul>
+  <li>Assistant Professor at TU/e</li>
+  <li>Focused on Big Data frameworks and scalable machine learning</li>
+</ul> 
+</p>
 
 ### Koen Minartz (Msc.)
 ![](https://research.tue.nl/files-asset/189257081/Minartz_Koen_MCS_PROM_PO_AS_9955.jpg?w=160&f=webp)

@@ -13,7 +13,7 @@ Correlation Detective is a fast and scalable family of algorithms for finding in
 {: .fs-6 .fw-300 }
 
 [View it on GitHub](https://github.com/correlationdetective/public){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
- <!-- [View it on GitHub](https://github.com/pmarsceill/just-the-docs){: .btn .fs-5 .mb-4 .mb-md-0 } -->
+ [Get Paper](https://raw.githubusercontent.com/CorrelationDetective/public/main/Technical_Report.pdf){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---
 
