@@ -125,6 +125,22 @@ These factors make that CD now enables researchers and analysts to include MC an
 ---
 
 # Demo
+To provide an example of the output of CD, we run the streaming version of CD (named CDStream) on the NYSE Trade and Quote dataset ([Link](https://wrds-www.wharton.upenn.edu/pages/about/data-vendors/nyse-trade-and-quote-taq/)). This dataset contains intraday transactions data (trades and quotes) for all securities listed on the New York Stock Exchange (NYSE) and American Stock Exchange (AMEX), as well as Nasdaq National Market System (NMS) and SmallCap issues **with millisecond-level granularity**. 
+
+We simulate a stream of this data using the provided timestamps and feed this datastream to CDStream. As per our configuration, the algorithm handles the arriving price updates in batches of one second, and updates the result set accordingly. In this case, the result set is comprised of all combinations of 3 vectors $$ a,b,c $$, such that the multivariate correlation $$ \rho_{a,AVG(b,c)} \geq 0.85 $$ over a sliding window of one hour (i.e. the prices throughout the latest hour). The figure below visualizes a subset of the output of CDStream through time.
+<p style="text-align:center">
+    <div width="100%" style="text-align:center">
+    <img src="https://user-images.githubusercontent.com/100126005/160821647-d2813a16-bf29-4dc7-ad24-adebc7142bab.gif" alt="stock_animation">
+    </div>
+    <em>Animation of the result set (i.e. highly correlated triplets) when running CDStream on TAQ dataset</em>
+</p>
+
+A you can see, CDStream is able to monitor the correlations of combinations in the result set as well as identify new combinations that enter the set. This feature is essential if one wants to **analyze complex temporal relations in datasets** (i.e. correlations that exist only for some time) and/or the effect that sudden events have on correlations. Example use cases include; 
+- Flash-trading (where early discovery of irregularities in the market can help traders spot
+investment opportunities)
+- Weather sensor networks (where measurements must be monitored and analyzed for detection of anomalous events such as storms and floods)
+- Network monitoring systems (where usage information must be tracked to timely identify weak spots and DoS attacks)
+
 Want to see a demo on your own (numerical) dataset? Contact us via [email](mailto:o.papapetrou@tue.nl?subject=Correlation Detective contact&body=Dear Correlation Detective staff). \\
 Also take a look at our [mission statement](https://corrdetective.github.io/pages/about/).
 
