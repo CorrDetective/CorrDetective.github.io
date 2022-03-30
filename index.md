@@ -136,10 +136,9 @@ We simulate a stream of this data using the provided timestamps and feed this da
 </p>
 
 A you can see, CDStream is able to monitor the correlations of combinations in the result set as well as identify new combinations that enter the set. This feature is essential if one wants to **analyze complex temporal relations in datasets** (i.e. correlations that exist only for some time) and/or the effect that sudden events have on correlations. Example use cases include; 
-- Flash-trading (where early discovery of irregularities in the market can help traders spot
-investment opportunities)
-- Weather sensor networks (where measurements must be monitored and analyzed for detection of anomalous events such as storms and floods)
-- Network monitoring systems (where usage information must be tracked to timely identify weak spots and DoS attacks)
+- <u>Flash-trading</u> (where early discovery of irregularities in the market can help traders spot investment opportunities)
+- <u>Weather sensor network</u> (where measurements must be monitored and analyzed for detection of anomalous events such as storms and floods)
+- <u>Network monitoring system</u> (where usage information must be tracked to timely identify weak spots and DoS attacks)
 
 Want to see a demo on your own (numerical) dataset? Contact us via [email](mailto:o.papapetrou@tue.nl?subject=Correlation Detective contact&body=Dear Correlation Detective staff). \\
 Also take a look at our [mission statement](https://corrdetective.github.io/pages/about/).
