@@ -140,6 +140,8 @@ A you can see, CDStream is able to monitor the correlations of combinations in t
 - <u>Weather sensor network</u> (where measurements must be monitored and analyzed for detection of anomalous events such as storms and floods)
 - <u>Network monitoring system</u> (where usage information must be tracked to timely identify weak spots and DoS attacks)
 
+
+### Demo request
 Want to see a demo on your own (numerical) dataset? Contact us via [email](mailto:o.papapetrou@tue.nl?subject=Correlation Detective contact&body=Dear Correlation Detective staff). \\
 Also take a look at our [mission statement](https://corrdetective.github.io/pages/about/).
 
