@@ -40,7 +40,7 @@ $$ \rho_{(AB),C} = \rho(\frac{A+B}{2},C) = \frac{cov((A+B)/2,C)}{\sigma_{(A+B)/2
 
 Even though we use averaging as an aggregation method for these examples, Multi-Pearson supports effectively every element-wise aggregation method such as MAX, MIN, SUM, XOR, etc. This is important as the relevancy of aggregation method depend on the application domain.
 
-Also note that these examples only consider the Multi-Pearson correlation metric, while there also exist plenty of research on other multivariate correlation metrics such as **Tripoles** or **Multipoles** ([Link](https://conservancy.umn.edu/bitstream/handle/11299/216019/18-003.pdf?sequence=1)).
+Also note that these examples only consider the Multi-Pearson correlation metric, while there also exist plenty of research on other multivariate correlation metrics such as **Tripoles** or **Multipoles** ([Link](https://ieeexplore.ieee.org/document/8693798)).
 <!-- - Total Correlation ([Wiki](https://en.wikipedia.org/wiki/Total_correlation)) -->
 <!-- - Canonical Correlation Analysis ([Wiki](https://en.wikipedia.org/wiki/Canonical_correlation)) -->
 <!-- - Tripoles/Multipoles ([Link](https://conservancy.umn.edu/bitstream/handle/11299/216019/18-003.pdf?sequence=1)) -->
@@ -54,7 +54,7 @@ That's why multivariate correlations have become a popular topic in research com
 
 Some recent discoveries are:
 1. **Neuroscience**
-  - Analysis of *fMRI* data lead to the discovery that the brain's left middle frontal assimilates information from the right superior frontal and left inferior frontal regions while listening to audio ([Link](https://conservancy.umn.edu/bitstream/handle/11299/216019/18-003.pdf?sequence=1)). \\
+  - Analysis of *fMRI* data lead to the discovery that the brain's left middle frontal assimilates information from the right superior frontal and left inferior frontal regions while listening to audio ([Link](https://ieeexplore.ieee.org/document/8693798)). \\
   <img src="https://user-images.githubusercontent.com/100126005/156396694-734db45e-890e-4cae-b6d6-f418d73e5d1f.png" alt="brain_anno" width="60%">
   <!-- ![brain_anno](https://user-images.githubusercontent.com/100126005/156396694-734db45e-890e-4cae-b6d6-f418d73e5d1f.png) -->
 2. **Climatology**
@@ -132,7 +132,7 @@ We simulate a stream of this data using the provided timestamps and feed this da
     <div width="100%" style="text-align:center">
     <img src="https://user-images.githubusercontent.com/100126005/160821647-d2813a16-bf29-4dc7-ad24-adebc7142bab.gif" alt="stock_animation">
     </div>
-    <em>Animation of the result set (i.e. highly correlated triplets) when running CDStream on TAQ dataset</em>
+    <em>Animation of the result set (i.e. highly correlated triplets) when running CDStream on Trade and Quote dataset</em>
 </p>
 
 A you can see, CDStream is able to monitor the correlations of combinations in the result set as well as identify new combinations that enter the set. This feature is essential if one wants to **analyze complex temporal relations in datasets** (i.e. correlations that exist only for some time) and/or the effect that sudden events have on correlations. Example use cases include; 
