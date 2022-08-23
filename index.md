@@ -12,8 +12,8 @@ permalink: /
 Correlation Detective is a fast and scalable family of algorithms for finding interesting multivariate correlations in a dataset. 
 {: .fs-6 .fw-300 }
 
-[View it on GitHub](https://github.com/correlationdetective/public){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[Get Paper](https://raw.githubusercontent.com/CorrelationDetective/public/main/Technical_Report.pdf){: .btn .fs-5 .mb-4 .mb-md-0 }
+[View Code](https://github.com/correlationdetective/public){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Get Paper](https://vldb.org/pvldb/vol15/p1266-papapetrou.pdf){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---
 

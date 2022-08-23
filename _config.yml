@@ -68,7 +68,7 @@ heading_anchors: true
 
 # Aux links for the upper right navigation
 aux_links:
-  "Correlation Detective on GitHub":
+  "Code":
     - "//github.com/CorrelationDetective/public"
 
 # Makes Aux links open in a new tab. Default is false

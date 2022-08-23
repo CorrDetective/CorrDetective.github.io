@@ -1,7 +1,7 @@
 ---
 layout: default
 title: About us
-nav_order: 2
+nav_order: 3
 ---
 
 # About us
