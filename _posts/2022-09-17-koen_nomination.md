@@ -15,6 +15,6 @@ This nomination alone is a well deserved recognition for his hard work on the pr
 We are obviously cheering for him to win. 
 Go Koen!
 
-*Koen is currently working as a PhD student at the TU/e Data Mining group under the supervision of Vlado Menkowski.*
+*Koen is currently working as a PhD student at the TU/e Data Mining group under the supervision of Vlado Menkovski.*
 *Although Koen is still affiliated with the Correlation Detective project, he is currently focusing on simulation of biological systems with Machine Learning techniques.*
 [LinkedIn](https://www.linkedin.com/in/koen-minartz/)
