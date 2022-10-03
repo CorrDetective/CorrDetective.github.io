@@ -5,6 +5,9 @@ nav_order: 3
 ---
 
 # About us
+<div width="80%" style="text-align:left">
+<img src="https://user-images.githubusercontent.com/100126005/193610056-568087ad-e17b-41a3-b0e3-04debadb33b9.jpg" width="80%">
+</div>
 
 ## Mission statement
 To build an API for multivariate correlation detection built over a Massively Parallel Processing platform that offers scalability in terms of both computation and storage. The API will allow users to specify a wide variety of query parameters including definition of custom correlation measures and constraints.

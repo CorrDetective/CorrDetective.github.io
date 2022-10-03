@@ -8,6 +8,11 @@
         {% include post-meta.html %}
         {{ page.excerpt | markdownify | truncatewords: 60 }}
 
+        <div>
+            <a href="{{ first_level_url }}{{ page.url }}">read more</a>
+        </div>
+        
+
         </article>
     </li>
     <hr/>
