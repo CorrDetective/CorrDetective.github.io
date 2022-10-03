@@ -1,0 +1,16 @@
+<section class="section  typeset">
+<ul class="list  list--posts">
+    {% for page in site.posts %}
+    <li class="item  item--post">
+        <article class="article  article--post">
+
+        <h2><a href="{{ first_level_url }}{{ page.url }}">{{ page.title }}</a></h2>
+        {% include post-meta.html %}
+        {{ page.excerpt | markdownify | truncatewords: 60 }}
+
+        </article>
+    </li>
+    <hr/>
+    {% endfor %}
+</ul>
+</section>
