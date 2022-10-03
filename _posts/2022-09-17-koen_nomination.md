@@ -11,7 +11,7 @@ Koen Minartz, lead researcher and inventor of the original CD static algorithm, 
 
 The TU/e Academic Awards is an annual event where Eindhoven University of Technology celebrates students and researchers who produced the best thesis, in four different categories: Bachelor, Master, EngD, and PhD. For each category, one student/researcher is nominated from each department. Winners are chosen by an independent multidisciplinary panel of professors. 
 
-This nomination alone is a well deserved recognition for his hard work on the project, leading to a honourable graduation and a paper at a pretigious conference.
+This nomination alone is a well deserved recognition for his hard work on the project, leading to a honourable graduation and a paper at a prestigious conference.
 We are obviously cheering for him to win. 
 Go Koen!
 
