@@ -5,7 +5,7 @@ layout: post
 <div width="60%" style="text-align:center">
 <img src="https://user-images.githubusercontent.com/100126005/193545250-b6880726-9098-4070-8d99-7171753f81c8.png" width="60%">
 </div>
-Koen Minartz, lead researcher and inventor of the original CD static algorithm, has been nominated for the **TU/e Best Overall Master Thesis** awards for his work on Correlation Detective. In his thesis, Koen worked on scalable detection of complex similarities in big (static) data which resulted in the paper [Multivariate Correlations Discovery in Static and Streaming data](https://vldb.org/pvldb/vol15/p1266-papapetrou.pdf) (VLDB 2022).
+Koen Minartz, lead researcher and inventor of the original CD static algorithm, has been nominated for the **TU/e Best Overall Master Thesis** awards for his work on Correlation Detective. In his thesis, Koen worked on scalable detection of complex similarities in big (static) data which contributed to the paper [Multivariate Correlations Discovery in Static and Streaming data](https://vldb.org/pvldb/vol15/p1266-papapetrou.pdf) (VLDB 2022).
 
 <!-- more -->
 

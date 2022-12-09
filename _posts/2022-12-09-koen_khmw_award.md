@@ -6,7 +6,7 @@ Another award for Koen Minartz! This time, the CD researcher received the first 
 
 <!-- more -->
 
-In his thesis, Koen worked on scalable detection of complex similarities in big (static) data which resulted in the paper [Multivariate Correlations Discovery in Static and Streaming data](https://vldb.org/pvldb/vol15/p1266-papapetrou.pdf) (VLDB 2022).
+In his thesis, Koen worked on scalable detection of complex similarities in big (static) data which contributed to the paper [Multivariate Correlations Discovery in Static and Streaming data](https://vldb.org/pvldb/vol15/p1266-papapetrou.pdf) (VLDB 2022).
 
 This award is a well deserved recognition for his hard work on the project, leading to a honourable graduation and a paper at a prestigious conference.
 We are very proud to have as part of the team.
