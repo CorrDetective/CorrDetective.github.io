@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: Blog
+title: News
 nav_order: 4
 collectionpage: posts
 ---

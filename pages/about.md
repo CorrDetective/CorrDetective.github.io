@@ -12,11 +12,19 @@ nav_order: 3
 ## Mission statement
 To build an API for multivariate correlation detection built over a Massively Parallel Processing platform that offers scalability in terms of both computation and storage. The API will allow users to specify a wide variety of query parameters including definition of custom correlation measures and constraints.
 This website was created to facilitate community awareness and adoption of multivariate correlations. Also, it aims to offer education on the family of Correlation Detective algorithms and foster novel research collaborations with domain experts and researchers intesively working with correlations.
-Do you room for collaboration or (non-commercial) application of these solutions? Contact us via [email](mailto:o.papapetrou@tue.nl?subject=Correlation Detective contact&body=Dear Correlation Detective staff).
+Do you room for collaboration or (non-commercial) application of these solutions? Contact us via [email](mailto:j.e.d.hondt@tue.nl?subject=Correlation Detective contact&body=Dear Correlation Detective staff,).
 
 ## People
 
  <div class="row">
+  <div class="column">
+    <h3>Jens d'Hondt (Msc.)</h3>
+    <img src="https://user-images.githubusercontent.com/100126005/156363675-71c0c9c3-bc9e-495a-9d4b-0c378fa59fb6.jpeg" alt="Jens" style="width:100%">
+    <ul>
+        <li>PhD Candidate at TU/e</li>
+        <li>Head researcher of Correlation Detective</li>
+    </ul> 
+  </div>
   <div class="column">
     <h3> dr. Odysseas Papapetrou</h3>
     <img src="https://research.tue.nl/files-asset/106103952/Papapetrou_Odysseas_WI_PO_VH_3194_UD.jpg" alt="Odysseas" style="width:100%">
@@ -31,14 +39,6 @@ Do you room for collaboration or (non-commercial) application of these solutions
     <ul>
         <li>PhD Candidate at TU/e</li>
         <li>Focused on applied AI</li>
-    </ul> 
-  </div>
-  <div class="column">
-    <h3>Jens d'Hondt (Msc.)</h3>
-    <img src="https://user-images.githubusercontent.com/100126005/156363675-71c0c9c3-bc9e-495a-9d4b-0c378fa59fb6.jpeg" alt="Jens" style="width:100%">
-    <ul>
-        <li>Research Scientist at TU/e</li>
-        <li>Focused on multivariate correlation query systems</li>
     </ul> 
   </div>
 </div> 

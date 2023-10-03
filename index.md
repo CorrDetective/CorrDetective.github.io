@@ -9,18 +9,56 @@ permalink: /
 # Correlation Detective
 {: .fs-9 }
 
-Correlation Detective is a fast and scalable family of algorithms for finding interesting multivariate correlations in a dataset. 
+Correlation Detective is Java library for fast and scalable multivariate correlation analysis. 
 {: .fs-6 .fw-300 }
 
-[View Code](https://github.com/correlationdetective/public){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[Get Paper](https://vldb.org/pvldb/vol15/p1266-papapetrou.pdf){: .btn .fs-5 .mb-4 .mb-md-0 }
+[Library](https://github.com/correlationdetective/library){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Get Paper](https://www.win.tue.nl/~opapapetrou/papers/CD_differentmeasures.pdf){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---
 
 ## What is CD? (2 min video)
 <iframe width="560" height="315" src="https://www.youtube.com/embed/U7z4uyonixk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
---- 
+---
+
+#### Table of contents
+- [How to install](#how-to-install)
+- [What is a multivariate correlation?](#what-is-a-multivariate-correlation-mc)
+- [Why are they relevant?](#why-are-they-relevant)
+- [Why Correlation Detective?](#why-correlation-detective)
+- [Demo](#demo)
+
+## How to install
+### Option 1: Install using Maven
+1. Add the following dependency to your pom.xml file:
+
+   ```xml
+   <dependency>
+       <groupId>io.github.correlationdetective</groupId>
+       <artifactId>CorrelationDetective</artifactId>
+       <version>1.0</version>
+   </dependency>
+   ```
+
+### Option 2: Clone the Correlation Detective github repository
+1. Clone the Correlation Detective repository to your local machine:
+
+   ```bash
+   git clone https://github.com/CorrelationDetective/library.git
+    ```
+2. Navigate to the project directory:
+
+   ```bash
+   cd library
+   ```
+3. Build the project using Maven:
+
+   ```bash
+    mvn clean install
+    ```
+  
+---
 
 ## What is a multivariate correlation (MC)?
 Strictly speaking, a multivariate correlation is any statistical relationship (whether causal or not) between three or more random variables (e.g. time-series/vectors). This concept is different from the more commonly used *bivariate/pairwise correlation* ([Wiki](https://en.wikipedia.org/wiki/Correlation)) which only considers two variables.
@@ -144,87 +182,3 @@ A you can see, CDStream is able to monitor the correlations of combinations in t
 ### Demo request
 Want to see a demo on your own (numerical) dataset? Contact us via [email](mailto:o.papapetrou@tue.nl?subject=Correlation Detective contact&body=Dear Correlation Detective staff). \\
 Also take a look at our [mission statement](https://corrdetective.github.io/pages/about/).
-
-<!-- ## How does CD work?
-#### Coming soon -->
-
-
-
-<!-- ## Getting started
-
-### Dependencies
-
-Just the Docs is built for [Jekyll](https://jekyllrb.com), a static site generator. View the [quick start guide](https://jekyllrb.com/docs/) for more information. Just the Docs requires no special plugins and can run on GitHub Pages' standard Jekyll compiler. The [Jekyll SEO Tag plugin](https://github.com/jekyll/jekyll-seo-tag) is included by default (no need to run any special installation) to inject SEO and open graph metadata on docs pages. For information on how to configure SEO and open graph metadata visit the [Jekyll SEO Tag usage guide](https://jekyll.github.io/jekyll-seo-tag/usage/).
-
-### Quick start: Use as a GitHub Pages remote theme
-
-1. Add Just the Docs to your Jekyll site's `_config.yml` as a [remote theme](https://blog.github.com/2017-11-29-use-any-theme-with-github-pages/)
-```yaml
-remote_theme: pmarsceill/just-the-docs
-```
-<small>You must have GitHub Pages enabled on your repo, one or more Markdown files, and a `_config.yml` file. [See an example repository](https://github.com/pmarsceill/jtd-remote)</small>
-
-### Local installation: Use the gem-based theme
-
-1. Install the Ruby Gem
-```bash
-$ gem install just-the-docs
-```
-```yaml
-# .. or add it to your your Jekyll site’s Gemfile
-gem "just-the-docs"
-```
-2. Add Just the Docs to your Jekyll site’s `_config.yml`
-```yaml
-theme: "just-the-docs"
-```
-3. _Optional:_ Initialize search data (creates `search-data.json`)
-```bash
-$ bundle exec just-the-docs rake search:init
-```
-3. Run you local Jekyll server
-```bash
-$ jekyll serve
-```
-```bash
-# .. or if you're using a Gemfile (bundler)
-$ bundle exec jekyll serve
-```
-4. Point your web browser to [http://localhost:4000](http://localhost:4000)
-
-If you're hosting your site on GitHub Pages, [set up GitHub Pages and Jekyll locally](https://help.github.com/en/articles/setting-up-your-github-pages-site-locally-with-jekyll) so that you can more easily work in your development environment.
-
-### Configure Just the Docs
-
-- [See configuration options]({{ site.baseurl }}{% link docs/configuration.md %})
-
----
-
-## About the project
-
-Just the Docs is &copy; 2017-{{ "now" | date: "%Y" }} by [Patrick Marsceill](http://patrickmarsceill.com).
-
-### License
-
-Just the Docs is distributed by an [MIT license](https://github.com/pmarsceill/just-the-docs/tree/master/LICENSE.txt).
-
-### Contributing
-
-When contributing to this repository, please first discuss the change you wish to make via issue,
-email, or any other method with the owners of this repository before making a change. Read more about becoming a contributor in [our GitHub repo](https://github.com/pmarsceill/just-the-docs#contributing).
-
-#### Thank you to the contributors of Just the Docs!
-
-<ul class="list-style-none">
-{% for contributor in site.github.contributors %}
-  <li class="d-inline-block mr-1">
-     <a href="{{ contributor.html_url }}"><img src="{{ contributor.avatar_url }}" width="32" height="32" alt="{{ contributor.login }}"/></a>
-  </li>
-{% endfor %}
-</ul>
-
-### Code of Conduct
-
-Just the Docs is committed to fostering a welcoming community.
-
-[View our Code of Conduct](https://github.com/pmarsceill/just-the-docs/tree/master/CODE_OF_CONDUCT.md) on our GitHub repository. -->
