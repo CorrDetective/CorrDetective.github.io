@@ -18,5 +18,5 @@ The library includes all the newest features as described in our [VLDBJ 2023 art
 3. Support for **additional constraints** on the correlation patterns.
 4. Optimized search space **routing**.
 
-Documentation on how to use the library (including all the parameters) can be found on the [GitHub](https://correlationdetective.github.io/library/).
+Documentation on how to use the library (including all the parameters) can be found on the [GitHub](https://github.com/CorrelationDetective/library).
 
