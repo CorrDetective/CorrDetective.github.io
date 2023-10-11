@@ -13,7 +13,7 @@ Correlation Detective is Java library for fast and scalable multivariate correla
 {: .fs-6 .fw-300 }
 
 [Library](https://github.com/correlationdetective/library){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[Get Paper](https://www.win.tue.nl/~opapapetrou/papers/CD_differentmeasures.pdf){: .btn .fs-5 .mb-4 .mb-md-0 }
+[Get Paper](https://link.springer.com/article/10.1007/s00778-023-00815-y?utm_source=rct_congratemailt&utm_medium=email&utm_campaign=oa_20231011&utm_content=10.1007/s00778-023-00815-y){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---
 

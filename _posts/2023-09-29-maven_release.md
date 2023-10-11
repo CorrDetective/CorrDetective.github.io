@@ -6,7 +6,7 @@ layout: post
 We are happy to announce that Correlation Detective is now available as a Java Library on [GitHub](https://github.com/CorrelationDetective/library) and [Maven Central](https://central.sonatype.com/artifact/io.github.correlationdetective/CorrelationDetective/overview).
 
 This is a major milestone for the project, as it enables researchers and practitioners to easily use Correlation Detective in their own projects.
-The library includes all the newest features as described in our [VLDBJ 2023 article](https://www.win.tue.nl/~opapapetrou/papers/CD_differentmeasures.pdf), including:
+The library includes all the newest features as described in our [VLDBJ 2023 article](https://link.springer.com/article/10.1007/s00778-023-00815-y?utm_source=rct_congratemailt&utm_medium=email&utm_campaign=oa_20231011&utm_content=10.1007/s00778-023-00815-y), including:
 1. Support for **six popular correlation measures**:
     1. Pearson's correlation
     2. Spearman's correlation
