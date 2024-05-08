@@ -92,7 +92,7 @@ That's why multivariate correlations have become a popular topic in research com
 
 Some recent discoveries are:
 1. **Neuroscience**
-  - Analysis of *fMRI* data lead to the discovery that the brain's left middle frontal assimilates information from the right superior frontal and left inferior frontal regions while listening to audio ([Link](https://ieeexplore.ieee.org/document/8693798)). \\
+  - Analysis of *fMRI* data lead to the discovery that the brain's left middle frontal assimilates information from the right superior frontal and left inferior frontal regions when watching a video ([Link](https://dl.acm.org/doi/pdf/10.1145/3097983.3098099)). \\
   <img src="https://user-images.githubusercontent.com/100126005/156396694-734db45e-890e-4cae-b6d6-f418d73e5d1f.png" alt="brain_anno" width="60%">
   <!-- ![brain_anno](https://user-images.githubusercontent.com/100126005/156396694-734db45e-890e-4cae-b6d6-f418d73e5d1f.png) -->
 2. **Climatology**
