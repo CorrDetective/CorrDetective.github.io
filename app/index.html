@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous" />
+    <script type="text/javascript" charset="utf-8" src="d3.v7.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="classes.js"></script>
+    <style>
+        body {
+            background-color: #f4f7f9;
+        }
+        #app-container {
+            background-color: #fff;
+            padding-top: 1em;
+            padding-bottom: 1em;
+            margin-bottom: 2em;
+            box-shadow: 0 0 1em #ccc;
+            border-radius: 0 0 1em 1em;
+        }
+        @media (min-width: 576px) {
+          #app-container {
+            margin-top: 2em;
+            padding: 3em;
+            border-radius: 1em;
+          }
+        }
+
+        .table-view {
+            /*border: 1px solid #ccc;*/
+            padding: 1em;
+            max-width: 100%;
+            overflow: scroll;
+        }
+
+        .app-elipsis-result {
+              overflow-x: clip;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              display: inline-block;
+              max-width: 12em;
+        }
+        #app-result-vis text {
+            text-anchor: middle;
+            dominant-baseline: central;
+            font-size: 0.55em;
+        }
+    </style>
+</head>
+<body onload="main()">
+    <div class="container" id="app-container">
+        <div class="border" style="padding: 1em; border-radius: 1em; background-color: #f8f6f6;">
+            <div class="text-center mb-3">
+                <img src="cd_logo.png" alt="Correlation Detective Logo" height="78">
+            </div>
+            <h1 class="display-1 text-center fw-bold">Correlation Detective</h1>
+        </div>
+        <div style="padding: 1em;">
+            <p>
+            Correlation Detective is the state-of-the-art algorithm for mining multivariate correlations in data.
+            In this demo, you can run Correlation Detective in your browser, on your own data.
+            For more information on multivariate correlations and their applications, see the <a href="https://correlationdetective.com/">website</a>.
+            </p>
+            <p>
+            <b>Note:</b> This demo runs entirely in your browser, <b>no data is sent to any server</b>.
+            However, depending on the size of your data, it may use a lot of memory and CPU.
+            If your browser crashes, try using a smaller dataset, or limiting the number of dimensions and/or vectors to read below.
+            To run Correlation Detective on larger datasets, consider running it in Java, see the <a href="https://github.com/CorrelationDetective/library">GitHub repository</a>.
+            </p>
+        </div>
+
+        <form class="row was-validated" id="app-data-form">
+            <div class="col-12 col-md-6">
+                <div class="card">
+                    <h2 class="card-header">📂 1. Load Data</h2>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Load your own CSV file to detect correlations, or use
+                            one of ours.
+                        </p>
+                        <div class="mb-3 col-auto">
+                            <label for="app-data-input" class="form-label">File to load:</label>
+                            <input class="form-control" type="file" id="app-data-input">
+                        </div>
+
+                        <p>
+                            Here you can configure how the input is loaded,
+                            and discard parts of the dataset.
+                        </p>
+
+                        <div class="row">
+                            <div class="col-9">
+                                <label for="app-data-delimiter">Delimiter:</label>
+                                <p id="app-delimiter-help" class="form-text">
+                                    The delimiter that separates the fields in the CSV file.
+                                </p>
+                            </div>
+                            <div class="col-3 gy-2">
+                                <input
+                                        class="form-control"
+                                        type="text"
+                                        minlength="1" maxlength="1"
+                                        required
+                                        id="app-data-delimiter"
+                                        aria-describedby="app-delimiter-help"
+                                        value="," />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-9">
+                                <label for="app-data-max-vectors">Max Vectors:</label>
+                                <p id="app-data-max-vectors-help" class="form-text">
+                                    The maximum amount of vectors to read.
+                                    Any extra vectors are ignored.
+                                    (When empty, this is <code>infinity</code>)
+                                </p>
+                            </div>
+                            <div class="col-3 gy-2">
+                                <input
+                                        class="form-control"
+                                        type="number"
+                                        min="3" max="2147483647"
+                                        id="app-data-max-vectors"
+                                        aria-describedby="app-data-max-vectors-help" />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-9">
+                                <label for="app-data-max-dims">Max Dimensions:</label>
+                                <p id="app-data-max-dims-help" class="form-text">
+                                  The maximum amount of events to read.
+                                  Any other events are ignored.
+                                  (When empty, this is <code>infinity</code>)
+                                </p>
+                            </div>
+                            <div class="col-3 gy-2">
+                                <input
+                                        class="form-control"
+                                        type="number"
+                                        min="1" max="2147483647"
+                                        id="app-data-max-dims"
+                                        aria-describedby="app-data-max-dims-help" />
+                            </div>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="app-data-ignore-low-variance">
+                            <label class="form-check-label" for="app-data-ignore-low-variance">
+                                Ignore vectors in the input that have a low variance
+                            </label>
+                        </div>
+
+                        <span class="form-check-label">Format:</span>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="queryType" id="app-col-major-auto" value="option1" checked>
+                            <label class="form-check-label" for="app-col-major-auto">Auto</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="queryType" id="app-col-major-true" value="option2">
+                            <label class="form-check-label" for="app-col-major-true">Column Major</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="queryType" id="app-col-major-false" value="option3">
+                            <label class="form-check-label" for="app-col-major-false">Row Major</label>
+                        </div>
+
+                        <details>
+                            <summary>More options</summary>
+
+                            <div class="row">
+                                <div class="col-9">
+                                    <label for="app-data-partition">Partition:</label>
+                                    <p id="app-data-partition-help" class="form-text">
+                                        The partition to read, when this is
+                                        nonzero, the first
+                                        <code><var>partition</var> * <var>maxDimensions</var></code>
+                                        events are ignored.
+                                    </p>
+                                </div>
+                                <div class="col-3 gy-2">
+                                    <input
+                                            class="form-control"
+                                            type="number"
+                                            min="0" max="2147483647"
+                                            value="0"
+                                            id="app-data-partition"
+                                            aria-describedby="app-data-partition-help" />
+                                </div>
+                            </div>
+
+                        </details>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="float-end">
+                            <button id="app-data-btn" class="btn btn-primary" type="submit">Load Data</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6">
+                <div class="card">
+                    <h2 class="card-header">👀 Preview</h2>
+                    <div id="app-data-sample" class="table-view"></div>
+                </div>
+            </div>
+        </form>
+
+        <p></p>
+
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <form class="card" id="app-corr-form">
+                    <h2 class="card-header">⚙️ 2. Define Query</h2>
+                    <div class="card-body">
+                        <div id="app-worker-status"></div>
+
+                        <p class="card-text">
+                            When data has been loaded, you can run
+                            CorrelationDetective over it.
+                        </p>
+
+                        <div class="mb-3 col-auto">
+                            <label for="app-corr-metric" class="form-label">Correlation Metric:</label>
+                            <select class="form-select" id="app-corr-metric">
+                                <option value="PEARSON_CORRELATION">Pearson Correlation</option>
+                                <option value="SPEARMAN_CORRELATION">Spearman Correlation</option>
+                                <option value="MULTIPOLE">Multipole</option>
+                                <option value="EUCLIDEAN_SIMILARITY">Euclidean Distance (L2)</option>
+                                <option value="MANHATTAN_SIMILARITY">Manhattan Distance (L1)</option>
+                                <option value="CHEBYSHEV_SIMILARITY">Chebyshev Distance (L-inf)</option>
+                                <option value="TOTAL_CORRELATION">Total Correlation</option>
+                                <option value="INV_MULTIPOLE">Inverse-Multipole</option>
+                            </select>
+                        </div>
+
+                        <fieldset class="row">
+                            <legend class="col-form-label col-3">Query Type:</legend>
+                            <div class="col-9">
+                                <div class="row">
+                                    <div class="col-4 form-check">
+                                        <div class="form-control-plaintext">
+                                            <input class="form-check-input" type="radio" name="app-query-type" id="app-query-type-top-k" value="TOP_K" checked>
+                                            <label class="form-check-label" for="app-query-type-top-k">Top K</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-8 row">
+                                        <label class="col-6 col-lg-4 col-form-label text-end" for="app-query-top-k">K=</label>
+                                        <div class="col-6 col-lg-5">
+                                            <input
+                                                    class="form-control"
+                                                    type="number"
+                                                    min="1" max="2147483647"
+                                                    value="20"
+                                                    name="app-query-top-k"
+                                                    id="app-query-top-k" />
+                                        </div>
+                                    </div>
+                                    <div class="col-4 form-check">
+                                        <div class="form-control-plaintext">
+                                            <input class="form-check-input" type="radio" name="app-query-type" id="app-query-type-threshold" value="THRESHOLD">
+                                            <label class="form-check-label" for="app-query-type-threshold">Threshold</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-8 row">
+                                        <label class="col-6 col-lg-4 col-form-label text-end" for="app-query-threshold">Tau=</label>
+                                        <div class="col-6 col-lg-5">
+                                            <input
+                                                    class="form-control"
+                                                    type="number"
+                                                    min="0" max="2147483647"
+                                                    value="0.6"
+                                                    step="any"
+                                                    name="app-query-threshold"
+                                                    id="app-query-threshold" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="row">
+                            <legend class="col-form-label col-3">Pattern:</legend>
+                            <div class="col-9 gy-1">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="app-query-max-p-left">LHS Size</label>
+                                        <input
+                                                class="form-control"
+                                                type="number"
+                                                min="0" max="2147483647"
+                                                value="1"
+                                                id="app-query-max-p-left" />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="app-query-max-p-right">RHS Size</label>
+                                        <input
+                                                class="form-control"
+                                                type="number"
+                                                min="0" max="2147483647"
+                                                value="2"
+                                                id="app-query-max-p-right" />
+                                    </div>
+                                </div>
+                                <p class="form-text">
+                                    The maximum amount of variables on the left hand side
+                                    (LHS) and right hand side (RHS) to find a
+                                    correlation between.
+                                </p>
+                            </div>
+                        </fieldset>
+                        <details>
+                            <summary>More options</summary>
+                            <fieldset class="row">
+                                <legend class="col-form-label col-3">Additional constraints:</legend>
+                                <div class="col-9">
+                                    <div class="row">
+                                        <div class="col-4 form-check">
+                                            <div class="form-control-plaintext">
+                                                <input class="form-check-input" type="radio" name="app-additional-constraint" id="app-additional-constraint-none" value="option1" checked>
+                                                <label class="form-check-label" for="app-additional-constraint-none">None</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 form-check">
+                                            <div class="form-control-plaintext">
+                                                <input class="form-check-input" type="radio" name="app-additional-constraint" id="app-additional-constraint-irreducibility" value="option2">
+                                                <label class="form-check-label" for="app-additional-constraint-irreducibility">Irreducibility</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 form-check">
+                                            <div class="form-control-plaintext">
+                                                <input class="form-check-input" type="radio" name="app-additional-constraint" id="app-additional-constraint-minjump" value="option3">
+                                                <label class="form-check-label" for="app-additional-constraint-minjump">Minimum Jump</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-8 row">
+                                            <label class="col-6 col-lg-4 col-form-label text-end" for="app-additional-constraint-delta">Delta=</label>
+                                            <div class="col-6 col-lg-5">
+                                                <input
+                                                        class="form-control"
+                                                        type="number"
+                                                        min="0" max="1.0"
+                                                        value="0.1"
+                                                        step="any"
+                                                        name="app-additional-constraint-delta"
+                                                        id="app-additional-constraint-delta" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </details>
+                    </div>
+                    <div class="card-body">
+                        <button id="app-corr-btn" class="btn btn-primary float-end" type="submit">🚀 Correlate!</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-12 col-md-6">
+                <div class="card">
+                    <h2 class="card-header">📊 Results</h2>
+                    <div id="app-corr-results" class="table-view"></div>
+                </div>
+            </div>
+        </div>
+
+        <p></p>
+
+        <div class="card">
+            <h2 class="card-header">✨ 3. Analyze</h2>
+            <div id="app-result-vis" style="min-height: 600px"></div>
+        </div>
+    </div>
+
+    <footer class="text-center text-muted py-3">
+        Developed by Bram van de Wall & Jens d'Hondt
+    </footer>
+</body>
+</html>
