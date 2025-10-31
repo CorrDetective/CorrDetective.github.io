@@ -12,8 +12,9 @@ permalink: /
 Correlation Detective is Java library for fast and scalable multivariate correlation analysis. 
 {: .fs-6 .fw-300 }
 
-[Library](https://github.com/correlationdetective/library){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[Get Paper](https://link.springer.com/article/10.1007/s00778-023-00815-y?utm_source=rct_congratemailt&utm_medium=email&utm_campaign=oa_20231011&utm_content=10.1007/s00778-023-00815-y){: .btn .fs-5 .mb-4 .mb-md-0 }
+[Paper](https://link.springer.com/article/10.1007/s00778-023-00815-y?utm_source=rct_congratemailt&utm_medium=email&utm_campaign=oa_20231011&utm_content=10.1007/s00778-023-00815-y){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Demo](/app){: .btn .btn-silver .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Code](https://github.com/correlationdetective/library){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---
 
@@ -178,7 +179,6 @@ A you can see, CDStream is able to monitor the correlations of combinations in t
 - <u>Weather sensor network</u> (where measurements must be monitored and analyzed for detection of anomalous events such as storms and floods)
 - <u>Network monitoring system</u> (where usage information must be tracked to timely identify weak spots and DoS attacks)
 
-
-### Demo request
-Want to see a demo on your own (numerical) dataset? Contact us via [email](mailto:o.papapetrou@tue.nl?subject=Correlation Detective contact&body=Dear Correlation Detective staff). \\
+### Collaborate with us
+Interested in collaborating on multivariate correlation analysis? Contact us via [email](mailto:o.papapetrou@tue.nl?subject=Correlation Detective collaboration&body=Dear Correlation Detective staff). \\
 Also take a look at our [mission statement](https://corrdetective.github.io/pages/about/).
