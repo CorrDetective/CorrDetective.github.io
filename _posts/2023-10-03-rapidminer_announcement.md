@@ -3,7 +3,7 @@ title: Collaboration with RapidMiner
 layout: post
 ---
 
-![altair_logo](~/assets/images/altair-logo-vector.png)
+![altair_logo](https://correlationdetective.com/assets/altair-logo-vector.png)
 
 🚀 Exciting News! Correlation Detective is coming to the Altair RapidMiner software! 📊🕵️‍♂️
 
