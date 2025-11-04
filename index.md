@@ -182,3 +182,6 @@ A you can see, CDStream is able to monitor the correlations of combinations in t
 ### Collaborate with us
 Interested in collaborating on multivariate correlation analysis? Contact us via [email](mailto:o.papapetrou@tue.nl?subject=Correlation Detective collaboration&body=Dear Correlation Detective staff). \\
 Also take a look at our [mission statement](https://corrdetective.github.io/pages/about/).
+
+### Acknowledgement
+This research received funding from the European Union’s Horizon Europe research and innovation programme [STELAR](https://stelar-project.eu/) under grant agreement No. 101070122.
