@@ -3,9 +3,7 @@ title: Collaboration with RapidMiner
 layout: post
 ---
 
-<div width="60%" style="text-align:center">
-<img src="https://rapidminer.com/wp-content/uploads/2022/03/logo-375x86.png" width="60%">
-</div>
+![altair_logo](./assets/images/altair-logo-vector.png)
 🚀 Exciting News! Correlation Detective is coming to RapidMiner! 📊🕵️‍♂️
 
 We are thrilled to announce that our powerful Java library will be integrated into RapidMiner's marketplace as an external library before the end of this year! 🎉
